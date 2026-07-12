@@ -4,33 +4,32 @@ export function Quiz(question,current,total){
 
 return `
 
-<section class="quiz">
+<section class="quiz fade">
 
-<div class="quiz-card fade">
+<div class="quiz-shell">
 
 <div class="progress">
 
 <div
 class="progress-fill"
-style="width:${current/total*100}%">
-
+style="width:${(current/total)*100}%">
 </div>
 
 </div>
 
-<div class="quiz-chip">
+<div class="chapter-pill">
 
-Question ${current} of ${total}
+${question.chapter}
 
 </div>
 
-<h2>
+<h1>
 
 ${question.title}
 
-</h2>
+</h1>
 
-<p>
+<p class="story">
 
 ${question.text}
 
@@ -41,16 +40,30 @@ ${question.text}
 ${question.answers.map((answer,index)=>`
 
 <button
-
 class="answer"
-
 data-answer="${index}">
 
+<span class="answer-text">
+
 ${answer}
+
+</span>
+
+<span class="arrow">
+
+→
+
+</span>
 
 </button>
 
 `).join("")}
+
+</div>
+
+<div class="progress-text">
+
+Question ${current} of ${total}
 
 </div>
 

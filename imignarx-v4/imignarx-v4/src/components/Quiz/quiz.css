@@ -9,100 +9,37 @@ justify-content:center;
 
 align-items:center;
 
-padding:50px;
+padding:50px 24px;
 
 }
 
-.quiz-card{
+.quiz-shell{
 
 width:min(900px,92vw);
 
 padding:60px;
 
-background:rgba(255,255,255,.55);
-
-backdrop-filter:blur(18px);
-
 border-radius:36px;
+
+background:rgba(255,255,255,.58);
+
+backdrop-filter:blur(22px);
 
 box-shadow:var(--shadow);
 
 }
 
-.quiz-chip{
-
-display:inline-block;
-
-padding:10px 18px;
-
-background:white;
-
-border-radius:999px;
-
-font-weight:700;
-
-margin-bottom:24px;
-
-}
-
-.quiz h2{
-
-margin-bottom:24px;
-
-}
-
-.quiz p{
-
-margin-bottom:36px;
-
-}
-
-.answers{
-
-display:grid;
-
-gap:16px;
-
-}
-
-.answer{
-
-padding:20px;
-
-border:none;
-
-border-radius:18px;
-
-background:white;
-
-font-size:1rem;
-
-transition:var(--transition);
-
-text-align:left;
-
-}
-
-.answer:hover{
-
-transform:translateY(-2px);
-
-background:#eefbf3;
-
-}
-
-
 .progress{
 
 height:10px;
 
-background:#dfeee7;
-
 border-radius:999px;
 
-margin-bottom:30px;
+background:#d9ece3;
 
 overflow:hidden;
+
+margin-bottom:28px;
 
 }
 
@@ -113,9 +50,134 @@ height:100%;
 background:linear-gradient(
 90deg,
 #2EB872,
-#65D09A
+#69d4a4
 );
 
 transition:.35s;
 
 }
+
+.chapter-pill{
+
+display:inline-flex;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+background:white;
+
+font-weight:700;
+
+margin-bottom:28px;
+
+box-shadow:0 10px 24px rgba(0,0,0,.08);
+
+}
+
+.quiz h1{
+
+margin-bottom:26px;
+
+color:#163b2d;
+
+}
+
+.story{
+
+font-size:1.15rem;
+
+line-height:1.9;
+
+margin-bottom:42px;
+
+}
+
+.answers{
+
+display:grid;
+
+gap:18px;
+
+}
+
+.answer{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:22px;
+
+border:none;
+
+border-radius:20px;
+
+background:white;
+
+transition:.25s;
+
+font-size:1rem;
+
+}
+
+.answer:hover{
+
+transform:translateY(-3px);
+
+background:#eefbf3;
+
+box-shadow:0 18px 36px rgba(0,0,0,.08);
+
+}
+
+.answer-text{
+
+font-weight:600;
+
+}
+
+.arrow{
+
+font-size:1.4rem;
+
+opacity:.55;
+
+}
+
+.progress-text{
+
+margin-top:28px;
+
+text-align:center;
+
+font-size:.92rem;
+
+color:#587469;
+
+}
+
+@media(max-width:768px){
+
+.quiz-shell{
+
+padding:34px 24px;
+
+}
+
+.quiz h1{
+
+font-size:2.3rem;
+
+}
+
+.story{
+
+font-size:1rem;
+
+}
+
+}
+
