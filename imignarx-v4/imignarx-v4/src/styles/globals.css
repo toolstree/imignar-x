@@ -1,0 +1,51 @@
+@import "./tokens.css";
+@import "./reset.css";
+@import "./typography.css";
+@import "./layout.css";
+@import "./animations.css";
+
+body{
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#eef8f2,
+
+#dff5ea,
+
+#d5f1f8
+
+);
+
+min-height:100vh;
+
+}
+
+.screen-exit{
+
+animation:screenExit .5s ease forwards;
+
+}
+
+@keyframes screenExit{
+
+from{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+to{
+
+opacity:0;
+
+transform:scale(.98);
+
+}
+
+}

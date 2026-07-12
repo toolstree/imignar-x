@@ -1,0 +1,22 @@
+.container{
+
+width:min(
+var(--container),
+92vw
+);
+
+margin:auto;
+
+}
+
+.section{
+
+padding:80px 0;
+
+}
+
+.hidden{
+
+display:none!important;
+
+}

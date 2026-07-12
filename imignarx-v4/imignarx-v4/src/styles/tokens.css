@@ -1,0 +1,34 @@
+:root{
+
+--bg:#eef8f2;
+--surface:#ffffff;
+--surface-glass:rgba(255,255,255,.18);
+
+--primary:#2EB872;
+--primary-dark:#23945d;
+--secondary:#6FD1C5;
+
+--text:#18342A;
+--text-soft:#527268;
+--white:#ffffff;
+
+--shadow:
+0 20px 60px rgba(0,0,0,.12);
+
+--radius-sm:14px;
+--radius:24px;
+--radius-lg:36px;
+
+--transition:.28s ease;
+
+--container:1200px;
+
+--font:
+Inter,
+system-ui,
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+sans-serif;
+
+}
