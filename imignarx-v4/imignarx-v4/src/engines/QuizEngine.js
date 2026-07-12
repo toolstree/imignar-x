@@ -1,6 +1,7 @@
 import { QUESTIONS } from "../data/questions.js";
 import { Quiz } from "../components/Quiz/Quiz.js";
 import { Results } from "../components/Results/Results.js";
+import { EmailCapture } from "../components/Email/Email.js";
 import { History } from "../components/History/History.js";
 import ResultEngine from "./ResultEngine.js";
 import GardenEngine from "./GardenEngine.js";
@@ -90,6 +91,38 @@ StorageService.history()
 )
 
 );
+
+results.insertAdjacentHTML(
+
+"beforeend",
+
+EmailCapture(result)
+
+);
+
+const form=document.getElementById("emailForm");
+
+if(form){
+
+form.onsubmit=(e)=>{
+
+e.preventDefault();
+
+const email=document.getElementById("email").value.trim();
+
+const ok=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+document.getElementById("emailMessage").textContent=
+
+ok
+
+?"✅ Report unlocked! (Email capture placeholder)"
+
+:"Please enter a valid email.";
+
+};
+
+}
 
 document
 .getElementById("restartJourney")
