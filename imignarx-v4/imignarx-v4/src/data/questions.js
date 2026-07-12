@@ -2,9 +2,10 @@ export const QUESTIONS=[
 
 {
 id:1,
+scene:"forest",
 chapter:"Chapter One",
 title:"The Forest Awakens",
-text:"Morning sunlight filters gently through ancient trees. The forest is still waking, and every path seems equally inviting. You take a slow breath and wonder which direction feels right.",
+text:"Morning sunlight filters gently through ancient trees. The forest is still waking, and every path seems equally inviting.",
 answers:[
 "🌿 Walk slowly and enjoy the silence",
 "🌄 Explore every hidden trail",
@@ -15,53 +16,57 @@ answers:[
 
 {
 id:2,
+scene:"river",
 chapter:"Chapter Two",
 title:"The Crystal River",
-text:"A clear river winds peacefully through the valley. The water reflects the sky, inviting you to pause before making your next move.",
+text:"A peaceful river reflects the morning sky. The current is calm and patient.",
 answers:[
 "💧 Sit beside the water",
 "🌉 Cross immediately",
-"🚶 Follow the river downstream",
-"🪨 Observe quietly first"
+"🚶 Follow the river",
+"🪨 Observe quietly"
 ]
 },
 
 {
 id:3,
+scene:"flowers",
 chapter:"Chapter Three",
 title:"The Flower Meadow",
-text:"Thousands of wildflowers sway gently in the breeze. Every color seems to carry its own emotion and memory.",
+text:"A meadow bursts into colour as butterflies drift across thousands of blossoms.",
 answers:[
-"🌸 Wander through the flowers",
-"📷 Capture the scenery",
-"🦋 Watch the butterflies",
-"☀️ Lie down and relax"
+"🌸 Walk gently",
+"📷 Capture the beauty",
+"🦋 Follow butterflies",
+"☀️ Rest peacefully"
 ]
 },
 
 {
 id:4,
+scene:"mountain",
 chapter:"Chapter Four",
 title:"The Mountain Path",
-text:"The trail begins to climb. The air becomes cooler, the view wider, and every step asks for a little more determination.",
+text:"The air grows cooler as the trail climbs higher toward a peaceful summit.",
 answers:[
-"🥾 Keep climbing",
-"🪨 Rest and reflect",
-"📖 Study the surroundings",
-"🌤 Enjoy the changing view"
+"🥾 Continue climbing",
+"🪨 Rest awhile",
+"📖 Observe everything",
+"🌤 Enjoy the view"
 ]
 },
 
 {
 id:5,
+scene:"summit",
 chapter:"Chapter Five",
 title:"The Quiet Summit",
-text:"At the summit, everything becomes still. The forests, rivers and valleys now lie beneath you. One final thought comes naturally to mind.",
+text:"The entire landscape stretches beneath you. One final reflection naturally appears.",
 answers:[
 "🙏 Gratitude",
 "✨ Curiosity",
 "🌅 Hope",
-"🌿 Inner peace"
+"🌿 Inner Peace"
 ]
 }
 

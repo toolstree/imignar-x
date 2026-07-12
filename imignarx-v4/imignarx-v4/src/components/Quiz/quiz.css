@@ -181,3 +181,30 @@ font-size:1rem;
 
 }
 
+
+/* ---------- SCENES ---------- */
+
+.forest{
+background:linear-gradient(135deg,#dff8ea,#bfe6c8,#9dd6af);
+}
+
+.river{
+background:linear-gradient(135deg,#d8f5ff,#b8ebff,#8fd4ff);
+}
+
+.flowers{
+background:linear-gradient(135deg,#fff4fb,#ffe6f4,#ffd6ec);
+}
+
+.mountain{
+background:linear-gradient(135deg,#eef6ff,#dce9ff,#c8dbff);
+}
+
+.summit{
+background:linear-gradient(135deg,#fff8df,#fff2b8,#ffe48c);
+}
+
+.quiz{
+transition:background .8s ease;
+}
+

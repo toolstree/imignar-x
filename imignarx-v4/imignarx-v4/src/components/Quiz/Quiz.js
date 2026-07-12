@@ -4,7 +4,7 @@ export function Quiz(question,current,total){
 
 return `
 
-<section class="quiz fade">
+<section class="quiz fade ${question.scene}">
 
 <div class="quiz-shell">
 
