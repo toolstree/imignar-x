@@ -1,8 +1,10 @@
 import { QUESTIONS } from "../data/questions.js";
 import { Quiz } from "../components/Quiz/Quiz.js";
 import { Results } from "../components/Results/Results.js";
+import { History } from "../components/History/History.js";
 import ResultEngine from "./ResultEngine.js";
 import GardenEngine from "./GardenEngine.js";
+import StorageService from "../services/StorageService.js";
 
 class QuizEngine{
 
@@ -65,13 +67,29 @@ quiz.classList.add("hidden");
 
 results.classList.remove("hidden");
 
-results.innerHTML=Results(
+const result=
 
-ResultEngine.calculate(this.answers)
+ResultEngine.calculate(this.answers);
 
-);
+StorageService.addJourney(result);
+
+results.innerHTML=
+
+Results(result);
 
 GardenEngine.render(this.answers.length);
+
+results.insertAdjacentHTML(
+
+"beforeend",
+
+History(
+
+StorageService.history()
+
+)
+
+);
 
 document
 .getElementById("restartJourney")
