@@ -1,5 +1,7 @@
 import { QUESTIONS } from "../data/questions.js";
 import { Quiz } from "../components/Quiz/Quiz.js";
+import { Results } from "../components/Results/Results.js";
+import ResultEngine from "./ResultEngine.js";
 
 class QuizEngine{
 
@@ -23,19 +25,11 @@ render(){
 
 const root=document.getElementById("screen-quiz");
 
-if(!root)return;
-
 root.innerHTML=Quiz(
 QUESTIONS[this.index],
 this.index+1,
 QUESTIONS.length
 );
-
-this.bind();
-
-}
-
-bind(){
 
 document.querySelectorAll(".answer").forEach(btn=>{
 
@@ -43,7 +37,17 @@ btn.onclick=()=>{
 
 this.answers.push(btn.dataset.answer);
 
-this.next();
+this.index++;
+
+if(this.index>=QUESTIONS.length){
+
+this.finish();
+
+}else{
+
+this.render();
+
+}
 
 };
 
@@ -51,51 +55,24 @@ this.next();
 
 }
 
-next(){
-
-this.index++;
-
-if(this.index>=QUESTIONS.length){
-
-this.finish();
-
-return;
-
-}
-
-this.render();
-
-}
-
 finish(){
 
-const root=document.getElementById("screen-quiz");
+const quiz=document.getElementById("screen-quiz");
+const results=document.getElementById("screen-results");
 
-root.innerHTML=`
+quiz.classList.add("hidden");
 
-<section class="quiz">
+results.classList.remove("hidden");
 
-<div class="quiz-card fade">
+results.innerHTML=Results(
 
-<h2>
+ResultEngine.calculate(this.answers)
 
-🌿 Journey Complete
+);
 
-</h2>
-
-<p>
-
-Preparing your personal reflection...
-
-</p>
-
-</div>
-
-</section>
-
-`;
-
-console.log(this.answers);
+document
+.getElementById("restartJourney")
+.onclick=()=>location.reload();
 
 }
 
