@@ -2,6 +2,7 @@ import { QUESTIONS } from "../data/questions.js";
 import { Quiz } from "../components/Quiz/Quiz.js";
 import { Results } from "../components/Results/Results.js";
 import ResultEngine from "./ResultEngine.js";
+import GardenEngine from "./GardenEngine.js";
 
 class QuizEngine{
 
@@ -69,6 +70,8 @@ results.innerHTML=Results(
 ResultEngine.calculate(this.answers)
 
 );
+
+GardenEngine.render(this.answers.length);
 
 document
 .getElementById("restartJourney")
