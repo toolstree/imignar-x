@@ -3,8 +3,10 @@ import { Quiz } from "../components/Quiz/Quiz.js";
 import { Results } from "../components/Results/Results.js";
 import { EmailCapture } from "../components/Email/Email.js";
 import { History } from "../components/History/History.js";
+
 import ResultEngine from "./ResultEngine.js";
 import GardenEngine from "./GardenEngine.js";
+
 import StorageService from "../services/StorageService.js";
 
 class QuizEngine{
@@ -29,17 +31,35 @@ render(){
 
 const root=document.getElementById("screen-quiz");
 
-root.innerHTML=Quiz(
+if(!root)return;
+
+root.innerHTML=
+
+Quiz(
+
 QUESTIONS[this.index],
+
 this.index+1,
+
 QUESTIONS.length
+
 );
+
+this.bind();
+
+}
+
+bind(){
 
 document.querySelectorAll(".answer").forEach(btn=>{
 
 btn.onclick=()=>{
 
-this.answers.push(btn.dataset.answer);
+this.answers.push(
+
+Number(btn.dataset.answer)
+
+);
 
 this.index++;
 
@@ -62,7 +82,10 @@ this.render();
 finish(){
 
 const quiz=document.getElementById("screen-quiz");
+
 const results=document.getElementById("screen-results");
+
+if(!quiz||!results)return;
 
 quiz.classList.add("hidden");
 
@@ -77,8 +100,6 @@ StorageService.addJourney(result);
 results.innerHTML=
 
 Results(result);
-
-GardenEngine.render(this.answers.length);
 
 results.insertAdjacentHTML(
 
@@ -100,33 +121,77 @@ EmailCapture(result)
 
 );
 
-const form=document.getElementById("emailForm");
+GardenEngine.render(
+
+this.answers.length
+
+);
+
+const form=
+
+document.getElementById("emailForm");
 
 if(form){
 
-form.onsubmit=(e)=>{
+form.addEventListener(
+
+"submit",
+
+e=>{
 
 e.preventDefault();
 
-const email=document.getElementById("email").value.trim();
+const email=
 
-const ok=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+document
 
-document.getElementById("emailMessage").textContent=
+.getElementById("email")
+
+.value
+
+.trim();
+
+const ok=
+
+/^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+.test(email);
+
+document
+
+.getElementById("emailMessage")
+
+.textContent=
 
 ok
 
-?"✅ Report unlocked! (Email capture placeholder)"
+? "✅ Report unlocked!"
 
-:"Please enter a valid email.";
+: "Please enter a valid email.";
+
+}
+
+);
+
+}
+
+const restart=
+
+document.getElementById(
+
+"restartJourney"
+
+);
+
+if(restart){
+
+restart.onclick=()=>{
+
+location.reload();
 
 };
 
 }
-
-document
-.getElementById("restartJourney")
-.onclick=()=>location.reload();
 
 }
 
